@@ -1,0 +1,55 @@
+.quizBox {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 750px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  gap: 10px;
+}
+.quizDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.quizQuestion {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.quizQuestionText {
+  text-align: center;
+  margin: 0px;
+}
+.shuffledAnswers {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.shuffledAnswersButton {
+  background-color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-width: 0px;
+  transition: all 0.1s ease-in-out;
+}
+.shuffledAnswersButton:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
