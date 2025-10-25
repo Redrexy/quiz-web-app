@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styles from './Survival.module.css';
 import { QuizBox } from '../../../components/quizBox/QuizBox';
-import './Survival.css';
 
 export const Survival = () => {
   const [question, setQuestion] = useState(null);
@@ -10,6 +11,8 @@ export const Survival = () => {
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(10);
   const [clicked, setClicked] = useState(false);
+
+  const navigate = useNavigate();
 
   const decodeHtml = (html) => {
     const txt = document.createElement('textarea');
@@ -62,6 +65,8 @@ export const Survival = () => {
 
     if (answer === correctAnswer) {
       setScore((prev) => prev + 1);
+    } else {
+      navigate('/result', { state: { score: score } });
     }
 
     setTimeout(() => {
@@ -71,13 +76,11 @@ export const Survival = () => {
   };
 
   const handleTimeUp = () => {
-    if (clicked) return;
-    setClicked(true);
-
-    setTimeout(() => {
-      getQuestion();
-      setClicked(false);
-    }, 1000);
+    navigate('/result', { state: { score: score } });
+    // setTimeout(() => {
+    //   getQuestion();
+    //   setClicked(false);
+    // }, 1000);
   };
 
   useEffect(() => {
@@ -102,7 +105,7 @@ export const Survival = () => {
   }, []);
 
   return (
-    <div className="survivalPage">
+    <div className={styles.survivalPage}>
       {question ? (
         <QuizBox
           question={question}
