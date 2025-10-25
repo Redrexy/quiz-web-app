@@ -10,6 +10,9 @@ export const color = {
     offBlackBorder: '#222222',
   },
   button: {
-    survialMode: '#5B913B',
+    primaryColor: 'blue',
+    home: 'blue',
+    playAgain: 'green',
+    submitScore: 'gold',
   },
 };
