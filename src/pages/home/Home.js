@@ -20,7 +20,11 @@ export const Home = () => {
           onClick={() => navigate('/survival')}
           color={color.button.survialMode}
         />
-        <PrimaryButton text="Example" onClick={null} color="blue" />
+        <PrimaryButton
+          text="Result Example"
+          onClick={() => navigate('/result')}
+          color="blue"
+        />
       </div>
     </div>
   );
