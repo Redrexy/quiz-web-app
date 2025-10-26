@@ -10,20 +10,21 @@ export const Result = () => {
   const result = location.state;
   const questions = result.questions;
   const score = result.score;
+  const page = result.page;
   const [resultMessage, setResultMessage] = useState('');
 
   useEffect(() => {
     if (score <= 0) {
-      setResultMessage('You need a lot of work!');
-    } else if (score <= 5) {
+      setResultMessage('Grind hard!');
+    } else if (score > 0 && score <= 5) {
       setResultMessage('Not bad, but you need some work!');
-    } else if (score <= 10) {
+    } else if (score > 5 && score <= 10) {
       setResultMessage('You did good!');
-    } else if (score <= 15) {
+    } else if (score > 10 && score <= 15) {
       setResultMessage('You did great!!');
-    } else if (score <= 20) {
+    } else if (score > 15 && score <= 20) {
       setResultMessage('You are a master!');
-    } else if (score > 21) {
+    } else if (score > 20) {
       setResultMessage('You are a legend!');
     }
   }, [score]);
@@ -31,12 +32,12 @@ export const Result = () => {
   return (
     <div className={styles.resultPage}>
       <div className={styles.resultHeader}>
-        <div
+        <p
           className={styles.resultTitle}
           style={{ fontSize: size.fonts.xxlarge }}
         >
           Score: {score}
-        </div>
+        </p>
         <p
           className={styles.resultMessage}
           style={{ fontsize: size.fonts.medium }}
@@ -53,7 +54,7 @@ export const Result = () => {
         />
         <PrimaryButton
           text="Play Again"
-          onClick={() => navigate('/survival')}
+          onClick={() => navigate(`/${page}`)}
           color={color.button.playAgain}
         />
         <PrimaryButton

@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Survival.module.css';
+import styles from './Minute.module.css';
 import { QuizBox } from '../../../components/quizBox/QuizBox';
 import { size } from '../../../theme';
 
-export const Survival = () => {
+export const Minute = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [questionNum, setQuestionNum] = useState(0);
   const [score, setScore] = useState(0);
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(60);
   const [clicked, setClicked] = useState(false);
 
   const navigate = useNavigate();
@@ -73,11 +73,6 @@ export const Survival = () => {
 
     if (answer === correctAnswer) {
       setScore((prev) => prev + 1);
-    } else {
-      navigate('/result', {
-        state: { score: score, questions: updatedQuestions, page: 'survival' },
-      });
-      return;
     }
 
     setTimeout(() => {
@@ -94,7 +89,7 @@ export const Survival = () => {
     setQuestions(updatedQuestions);
 
     navigate('/result', {
-      state: { score: score, questions: updatedQuestions, page: 'survival' },
+      state: { score: score, questions: updatedQuestions, page: 'minute' },
     });
   };
 
@@ -112,15 +107,11 @@ export const Survival = () => {
   }, [time]);
 
   useEffect(() => {
-    setTime(10);
-  }, [currentQuestion]);
-
-  useEffect(() => {
     getQuestion();
   }, []);
 
   return (
-    <div className={styles.survivalPage}>
+    <div className={styles.minutePage}>
       {currentQuestion ? (
         <QuizBox
           question={currentQuestion}
