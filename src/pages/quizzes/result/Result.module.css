@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 .resultHeader {
@@ -11,14 +12,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
 }
 .resultTitle {
   color: white;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 .resultMessage {
   color: white;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .buttonContainer {

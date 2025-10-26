@@ -32,12 +32,12 @@ export const Result = () => {
   return (
     <div className={styles.resultPage}>
       <div className={styles.resultHeader}>
-        <div
+        <p
           className={styles.resultTitle}
           style={{ fontSize: size.fonts.xxlarge }}
         >
           Score: {score}
-        </div>
+        </p>
         <p
           className={styles.resultMessage}
           style={{ fontsize: size.fonts.medium }}
