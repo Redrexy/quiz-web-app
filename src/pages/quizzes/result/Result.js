@@ -8,6 +8,7 @@ export const Result = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const result = location.state;
+  const questions = result.questions;
   const score = result.score;
   const [resultMessage, setResultMessage] = useState('');
 
@@ -42,23 +43,52 @@ export const Result = () => {
         >
           {resultMessage}
         </p>
-        <div className={styles.buttonContainer}>
-          <PrimaryButton
-            text="Home"
-            onClick={() => navigate('/')}
-            color={color.button.home}
-          />
-          <PrimaryButton
-            text="Play Again"
-            onClick={() => navigate('/survival')}
-            color={color.button.playAgain}
-          />
-          <PrimaryButton
-            text="Submit Score"
-            onClick={() => navigate('/')}
-            color={color.button.submitScore}
-          />
-        </div>
+      </div>
+
+      <div className={styles.buttonContainer}>
+        <PrimaryButton
+          text="Home"
+          onClick={() => navigate('/')}
+          color={color.button.home}
+        />
+        <PrimaryButton
+          text="Play Again"
+          onClick={() => navigate('/survival')}
+          color={color.button.playAgain}
+        />
+        <PrimaryButton
+          text="Submit Score"
+          onClick={null}
+          color={color.button.submitScore}
+        />
+      </div>
+
+      <div className={styles.resultContainer}>
+        {questions.map((question, index) => (
+          <div key={index} className={styles.resultDetails}>
+            <p
+              className={styles.resultDetailsText}
+              style={{
+                color: color.text.primaryBlack,
+                fontsize: size.fonts.medium,
+              }}
+            >
+              {question.question}
+            </p>
+            <p
+              className={styles.resultDetailsText}
+              style={{
+                color:
+                  question.selectedAnswer === question.correctAnswer
+                    ? 'green'
+                    : 'red',
+                fontsize: size.fonts.medium,
+              }}
+            >
+              {question.selectedAnswer ?? 'Not answered'}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

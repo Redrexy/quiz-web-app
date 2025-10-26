@@ -23,8 +23,13 @@ export const Home = () => {
           color={color.button.primaryColor}
         />
         <PrimaryButton
-          text="Result Example"
-          onClick={() => navigate('/result')}
+          text="1 Minute Mode"
+          onClick={null}
+          color={color.button.primaryColor}
+        />
+        <PrimaryButton
+          text="Leaderboard"
+          onClick={null}
           color={color.button.primaryColor}
         />
       </div>

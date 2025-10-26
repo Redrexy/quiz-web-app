@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Survival.module.css';
 import { QuizBox } from '../../../components/quizBox/QuizBox';
+import { size } from '../../../theme';
 
 export const Survival = () => {
-  const [question, setQuestion] = useState(null);
-  const [shuffledAnswers, setShuffledAnswers] = useState([]);
-  const [correctAnswer, setCorrectAnswer] = useState(null);
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestion, setCurrentQuestion] = useState(null);
   const [questionNum, setQuestionNum] = useState(0);
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(10);
@@ -50,9 +50,11 @@ export const Survival = () => {
         data.results[0].correct_answer,
       ].sort(() => Math.random() - 0.5);
 
-      setQuestion(decodeHtml(data.results[0].question));
-      setShuffledAnswers(shuffled);
-      setCorrectAnswer(decodeHtml(data.results[0].correct_answer));
+      setCurrentQuestion({
+        question: decodeHtml(data.results[0].question),
+        answers: shuffled,
+        correctAnswer: decodeHtml(data.results[0].correct_answer),
+      });
       setQuestionNum((prev) => prev + 1);
     } catch (error) {
       console.log('Error with getQuestion: ', error);
@@ -63,10 +65,19 @@ export const Survival = () => {
     if (clicked) return;
     setClicked(true);
 
+    const updatedQuestions = [
+      ...questions,
+      { ...currentQuestion, selectedAnswer: answer },
+    ];
+    setQuestions(updatedQuestions);
+
     if (answer === correctAnswer) {
       setScore((prev) => prev + 1);
     } else {
-      navigate('/result', { state: { score: score } });
+      navigate('/result', {
+        state: { score: score, questions: updatedQuestions },
+      });
+      return;
     }
 
     setTimeout(() => {
@@ -76,7 +87,15 @@ export const Survival = () => {
   };
 
   const handleTimeUp = () => {
-    navigate('/result', { state: { score: score } });
+    const updatedQuestions = [
+      ...questions,
+      { ...currentQuestion, selectedAnswer: null },
+    ];
+    setQuestions(updatedQuestions);
+
+    navigate('/result', {
+      state: { score: score, questions: updatedQuestions },
+    });
     // setTimeout(() => {
     //   getQuestion();
     //   setClicked(false);
@@ -98,7 +117,7 @@ export const Survival = () => {
 
   useEffect(() => {
     setTime(10);
-  }, [question]);
+  }, [currentQuestion]);
 
   useEffect(() => {
     getQuestion();
@@ -106,17 +125,25 @@ export const Survival = () => {
 
   return (
     <div className={styles.survivalPage}>
-      {question ? (
+      {currentQuestion ? (
         <QuizBox
-          question={question}
+          question={currentQuestion}
           questionNum={questionNum}
-          shuffledAnswers={shuffledAnswers}
-          onClick={(answer) => handleClick(answer, correctAnswer)}
+          onClick={(answer) =>
+            handleClick(answer, currentQuestion.correctAnswer)
+          }
           clicked={clicked}
           score={score}
           time={time}
         />
-      ) : null}
+      ) : (
+        <p
+          className={styles.loadingPage}
+          style={{ fontSize: size.fonts.xxlarge }}
+        >
+          Loading question...
+        </p>
+      )}
     </div>
   );
 };

@@ -4,7 +4,6 @@ import { color, size } from '../../theme';
 export const QuizBox = ({
   question,
   questionNum,
-  shuffledAnswers,
   onClick,
   clicked,
   score,
@@ -47,12 +46,12 @@ export const QuizBox = ({
           }}
           className={styles.quizQuestionText}
         >
-          {question}
+          {question.question}
         </p>
       </div>
 
       <div className={styles.shuffledAnswers}>
-        {shuffledAnswers.map((answer, index) => (
+        {question.answers.map((answer, index) => (
           <button
             key={index}
             className={styles.shuffledAnswersButton}
