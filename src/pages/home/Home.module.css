@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .homeTitle {
   color: white;
   margin-bottom: 0px;
@@ -13,7 +12,6 @@
 .homeDetails {
   color: white;
 }
-
 .buttonContainer {
   display: flex;
   flex-direction: column;

@@ -1,18 +1,17 @@
-import './QuizBox.css';
+import styles from './QuizBox.module.css';
 import { color, size } from '../../theme';
 
 export const QuizBox = ({
   question,
   questionNum,
-  shuffledAnswers,
   onClick,
   clicked,
   score,
   time,
 }) => {
   return (
-    <div className="quizBox">
-      <div className="quizDetails">
+    <div className={styles.quizBox}>
+      <div className={styles.quizDetails}>
         <span
           style={{
             fontSize: size.fonts.medium,
@@ -39,23 +38,23 @@ export const QuizBox = ({
         </span>
       </div>
 
-      <div className="quizQuestion">
+      <div className={styles.quizQuestion}>
         <p
           style={{
             fontSize: size.fonts.medium,
             color: color.text.primaryBlack,
           }}
-          className="quizQuestionText"
+          className={styles.quizQuestionText}
         >
-          {question}
+          {question.question}
         </p>
       </div>
 
-      <div className="shuffledAnswers">
-        {shuffledAnswers.map((answer, index) => (
+      <div className={styles.shuffledAnswers}>
+        {question.answers.map((answer, index) => (
           <button
             key={index}
-            className="shuffledAnswersButton"
+            className={styles.shuffledAnswersButton}
             style={{
               fontSize: size.fonts.medium,
               color: color.text.primaryBlack,
