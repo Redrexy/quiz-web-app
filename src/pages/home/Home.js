@@ -24,7 +24,7 @@ export const Home = () => {
         />
         <PrimaryButton
           text="1 Minute Mode"
-          onClick={null}
+          onClick={() => navigate('/minute')}
           color={color.button.primaryColor}
         />
         <PrimaryButton

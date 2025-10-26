@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 }
 .resultHeader {
   display: flex;
@@ -14,10 +15,11 @@
 }
 .resultTitle {
   color: white;
+  margin-bottom: 0px;
 }
 .resultMessage {
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .buttonContainer {
   display: flex;
@@ -25,6 +27,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .resultContainer {
   width: 750px;
@@ -33,7 +36,6 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
 }
 .resultDetails {
   width: 100%;
