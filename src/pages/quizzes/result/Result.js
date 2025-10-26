@@ -15,16 +15,16 @@ export const Result = () => {
 
   useEffect(() => {
     if (score <= 0) {
-      setResultMessage('You need a lot of work!');
-    } else if (score < 5) {
+      setResultMessage('Grind hard!');
+    } else if (score > 0 && score <= 5) {
       setResultMessage('Not bad, but you need some work!');
-    } else if (score < 10) {
+    } else if (score > 5 && score <= 10) {
       setResultMessage('You did good!');
-    } else if (score < 15) {
+    } else if (score > 10 && score <= 15) {
       setResultMessage('You did great!!');
-    } else if (score < 20) {
+    } else if (score > 15 && score <= 20) {
       setResultMessage('You are a master!');
-    } else if (score >= 20) {
+    } else if (score > 20) {
       setResultMessage('You are a legend!');
     }
   }, [score]);
