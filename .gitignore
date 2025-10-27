@@ -1,17 +1,20 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# React dependencies
+# ------------------------
+# React / Node (frontend)
+# ------------------------
+# Dependencies
 react/node_modules/
 react/.pnp
 react/.pnp.js
 
-# React testing
+# Testing
 react/coverage
 
-# React production
+# Production
 react/build
 
-# React misc
+# Misc
 react/.DS_Store
 react/.env.local
 react/.env.development.local
@@ -23,4 +26,20 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Python / Django backend
+# ------------------------
+# Python / Django (backend)
+# ------------------------
+# Virtual environment
+django/.venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Django database
+django/db.sqlite3
+
+# ------------------------
+# Others
+# ------------------------
+.env
