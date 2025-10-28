@@ -75,7 +75,7 @@ export const Survival = () => {
       setScore((prev) => prev + 1);
     } else {
       navigate('/result', {
-        state: { score: score, questions: updatedQuestions, page: 'survival' },
+        state: { score: score, questions: updatedQuestions, type: 'survival' },
       });
       return;
     }
@@ -94,7 +94,7 @@ export const Survival = () => {
     setQuestions(updatedQuestions);
 
     navigate('/result', {
-      state: { score: score, questions: updatedQuestions, page: 'survival' },
+      state: { score: score, questions: updatedQuestions, type: 'survival' },
     });
   };
 
