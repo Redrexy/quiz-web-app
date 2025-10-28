@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'SECRET_KEY'
+SECRET_KEY = 'django-insecure-tt8)k-b522yr1v$c4e+imduad5vmjm3+&y_w8u0x25m(0wuy4c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'leaderboard',
     'corsheaders',
 ]
@@ -80,11 +81,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DB_NAME',
-        'USER': 'DB_USER',
-        'PASSWORD': 'DB_PASSWORD',
-        'HOST': 'DB_HOST',
-        'PORT': 'DB_PORT',
+        'NAME': 'quizapp',
+        'USER': 'postgres',
+        'PASSWORD': 'subba',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
