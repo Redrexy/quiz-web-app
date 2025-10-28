@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './Result.module.css';
 import { color, size } from '../../../theme';
 import { PrimaryButton } from '../../../components/primaryButton/PrimaryButton';
+import { submitScore } from '../../../api/leaderboard/submitScore';
 
 export const Result = () => {
   const navigate = useNavigate();
@@ -10,8 +11,19 @@ export const Result = () => {
   const result = location.state;
   const questions = result.questions;
   const score = result.score;
-  const page = result.page;
+  const type = result.type;
+  const name = 'example2';
   const [resultMessage, setResultMessage] = useState('');
+
+  const handleSubmitScore = async () => {
+    const result = await submitScore(name, score, type);
+
+    if (result.success) {
+      alert('Score submitted!');
+    } else {
+      alert('Failed to submit score!');
+    }
+  };
 
   useEffect(() => {
     if (score <= 0) {
@@ -54,12 +66,12 @@ export const Result = () => {
         />
         <PrimaryButton
           text="Play Again"
-          onClick={() => navigate(`/${page}`)}
+          onClick={() => navigate(`/${type}`)}
           color={color.button.playAgain}
         />
         <PrimaryButton
           text="Submit Score"
-          onClick={null}
+          onClick={() => handleSubmitScore()}
           color={color.button.submitScore}
         />
       </div>

@@ -89,7 +89,7 @@ export const Minute = () => {
     setQuestions(updatedQuestions);
 
     navigate('/result', {
-      state: { score: score, questions: updatedQuestions, page: 'minute' },
+      state: { score: score, questions: updatedQuestions, type: 'minute' },
     });
   };
 
