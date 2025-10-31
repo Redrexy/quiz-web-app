@@ -1,0 +1,50 @@
+.leaderboardPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 50px 50px;
+}
+.leaderboardTop {
+  margin-bottom: 20px;
+}
+.filterContainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.filterDate {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+}
+.filterType {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+}
+.leaderboard {
+  background-color: 'red';
+}
+.leaderboardHeader {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.leaderboardHeaderText {
+  text-align: left;
+  color: white;
+}
+.leaderboardItem {
+  display: flex;
+  flex-direction: row;
+  border-bottom-width: 1px;
+  border-bottom-color: gray;
+  border-bottom-style: solid;
+  padding: 10px;
+}
+.leaderboardItemText {
+  text-align: left;
+  color: white;
+}

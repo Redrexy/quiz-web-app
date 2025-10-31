@@ -1,8 +1,21 @@
 import { endpoints } from '../endpoints';
 
-export const getLeaderboard = async () => {
+export const getLeaderboard = async (type, date) => {
   try {
-    const response = await fetch(endpoints.leaderboard, { method: 'GET' });
+    const params = new URLSearchParams();
+
+    if (type) {
+      params.append('type', type);
+    }
+    if (date) {
+      params.append('date', date);
+    }
+
+    const url = params.toString()
+      ? `${endpoints.leaderboard}?${params.toString()}`
+      : endpoints.leaderboard;
+
+    const response = await fetch(url, { method: 'GET' });
     if (!response.ok) {
       // throw new Error(data.error);
       return { success: true };
