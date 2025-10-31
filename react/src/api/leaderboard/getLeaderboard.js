@@ -18,7 +18,7 @@ export const getLeaderboard = async (type, date) => {
     const response = await fetch(url, { method: 'GET' });
     if (!response.ok) {
       // throw new Error(data.error);
-      return { success: true };
+      return { success: false };
     }
 
     const data = await response.json();
