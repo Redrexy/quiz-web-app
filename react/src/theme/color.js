@@ -1,6 +1,8 @@
 export const color = {
   background: {
-    primaryBackground: 'salmon',
+    primaryBackground: '#222222',
+    secondaryBackground: '#333333',
+    tertiaryBackground: '#555555',
   },
   text: {
     primaryBlack: '#222222',

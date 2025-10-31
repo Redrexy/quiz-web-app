@@ -29,7 +29,7 @@ export const Home = () => {
         />
         <PrimaryButton
           text="Leaderboard"
-          onClick={null}
+          onClick={() => navigate('/leaderboard')}
           color={color.button.primaryColor}
         />
       </div>
