@@ -1,8 +1,8 @@
 export const color = {
   background: {
-    primaryBackground: '#222222',
-    secondaryBackground: '#333333',
-    tertiaryBackground: '#555555',
+    primaryBackground: '#111111',
+    secondaryBackground: '#222222',
+    tertiaryBackground: '#444444',
   },
   text: {
     primaryBlack: '#222222',
@@ -12,9 +12,6 @@ export const color = {
     offBlackBorder: '#222222',
   },
   button: {
-    primaryColor: 'blue',
-    home: 'blue',
-    playAgain: 'green',
-    submitScore: 'gold',
+    primaryColor: '#fff',
   },
 };
