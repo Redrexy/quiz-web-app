@@ -1,38 +1,36 @@
 .resultPage {
-  background: #111111;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  gap: 20px;
 }
 .resultHeader {
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  gap: 10px;
 }
 .resultTitle {
-  color: white;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 .resultMessage {
-  color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 0px;
 }
 .buttonContainer {
+  width: 50%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
 }
 .resultContainer {
-  width: 750px;
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +45,7 @@
   justify-content: center;
   background-color: white;
   gap: 5px;
-  padding: 10px;
+  padding: 10px 0px;
 }
 .resultDetailsText {
   text-align: center;

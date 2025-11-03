@@ -42,17 +42,29 @@ export const Result = () => {
   }, [score]);
 
   return (
-    <div className={styles.resultPage}>
-      <div className={styles.resultHeader}>
+    <div
+      className={styles.resultPage}
+      style={{ background: color.background.primaryBackground }}
+    >
+      <div
+        className={styles.resultHeader}
+        style={{ background: color.background.secondaryBackground }}
+      >
         <p
           className={styles.resultTitle}
-          style={{ fontSize: size.fonts.xxlarge }}
+          style={{
+            fontSize: size.fonts.xxlarge,
+            color: color.text.primaryBlack,
+          }}
         >
           Score: {score}
         </p>
         <p
           className={styles.resultMessage}
-          style={{ fontsize: size.fonts.medium }}
+          style={{
+            fontsize: size.fonts.medium,
+            color: color.text.primaryBlack,
+          }}
         >
           {resultMessage}
         </p>
