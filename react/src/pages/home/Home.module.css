@@ -23,7 +23,7 @@
 .homeDetails {
   font-family: proxima-nova, sans-serif;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 .buttonContainer {
   display: flex;
