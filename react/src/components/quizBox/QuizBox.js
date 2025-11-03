@@ -10,7 +10,10 @@ export const QuizBox = ({
   time,
 }) => {
   return (
-    <div className={styles.quizBox}>
+    <div
+      className={styles.quizBox}
+      style={{ background: color.background.secondaryBackground }}
+    >
       <div className={styles.quizDetails}>
         <span
           style={{

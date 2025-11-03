@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Survival.module.css';
 import { QuizBox } from '../../../components/quizBox/QuizBox';
-import { size } from '../../../theme';
+import { color, size } from '../../../theme';
 
 export const Survival = () => {
   const [questions, setQuestions] = useState([]);
@@ -120,7 +120,10 @@ export const Survival = () => {
   }, []);
 
   return (
-    <div className={styles.survivalPage}>
+    <div
+      className={styles.survivalPage}
+      style={{ background: color.background.primaryBackground }}
+    >
       {currentQuestion ? (
         <QuizBox
           question={currentQuestion}
@@ -135,7 +138,10 @@ export const Survival = () => {
       ) : (
         <p
           className={styles.loadingPage}
-          style={{ fontSize: size.fonts.xxlarge }}
+          style={{
+            fontSize: size.fonts.xxlarge,
+            color: color.text.primaryWhite,
+          }}
         >
           Loading question...
         </p>
