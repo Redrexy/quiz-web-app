@@ -59,20 +59,11 @@ export const Result = () => {
       </div>
 
       <div className={styles.buttonContainer}>
-        <PrimaryButton
-          text="Home"
-          onClick={() => navigate('/')}
-          color={color.button.home}
-        />
-        <PrimaryButton
-          text="Play Again"
-          onClick={() => navigate(`/${type}`)}
-          color={color.button.playAgain}
-        />
+        <PrimaryButton text="Home" onClick={() => navigate('/')} />
+        <PrimaryButton text="Play Again" onClick={() => navigate(`/${type}`)} />
         <PrimaryButton
           text="Submit Score"
           onClick={() => handleSubmitScore()}
-          color={color.button.submitScore}
         />
       </div>
 

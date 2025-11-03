@@ -1,15 +1,30 @@
 import { useNavigate } from 'react-router-dom';
 import { PrimaryButton } from '../../components/primaryButton/PrimaryButton';
+import { color } from '../../theme';
 import styles from './Home.module.css';
 
 export const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.homePage}>
-      <div className={styles.homeContainer}>
-        <h1 className={styles.homeTitle}>React Quiz Application</h1>
-        <h3 className={styles.homeDetails}>
+    <div
+      className={styles.homePage}
+      style={{ background: color.background.primaryBackground }}
+    >
+      <div
+        className={styles.homeContainer}
+        style={{ background: color.background.secondaryBackground }}
+      >
+        <h1
+          className={styles.homeTitle}
+          style={{ color: color.text.primaryBlack }}
+        >
+          React Quiz Application
+        </h1>
+        <h3
+          className={styles.homeDetails}
+          style={{ color: color.text.primaryBlack }}
+        >
           Take this test to test your knowledge!
         </h3>
 

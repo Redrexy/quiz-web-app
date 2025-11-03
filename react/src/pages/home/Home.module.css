@@ -4,27 +4,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #111111;
 }
 .homeContainer {
-  border: 1px solid #444444;
-  border-radius: 20px;
-  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #222222;
-  box-shadow: red 0px 0px 15px;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 10px;
 }
 .homeTitle {
-  color: white;
-  margin-bottom: 0px;
   font-family: proxima-nova, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .homeDetails {
-  color: white;
   font-family: proxima-nova, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .buttonContainer {
   display: flex;

@@ -1,17 +1,21 @@
 export const color = {
   background: {
-    primaryBackground: '#111111',
-    secondaryBackground: '#222222',
-    tertiaryBackground: '#444444',
+    primaryBackground: 'salmon',
+    secondaryBackground: '#FFFFFF',
+    tertiaryBackground: '#E0E0E0',
   },
   text: {
     primaryBlack: '#222222',
-    primaryWhite: '#fff',
+    primaryWhite: '#FFFFFF',
   },
   border: {
     offBlackBorder: '#222222',
   },
   button: {
-    primaryColor: '#fff',
+    primaryColor: '#1976D2',
+  },
+  quiz: {
+    correctColor: '#4CAF50',
+    incorrectColor: '#F44336',
   },
 };
