@@ -1,5 +1,5 @@
 import styles from './FilterButton.module.css';
-import { size } from '../../theme';
+import { color, size } from '../../theme';
 
 export const FilterButton = ({ text, onClick, backgroundColor }) => {
   return (
@@ -10,7 +10,7 @@ export const FilterButton = ({ text, onClick, backgroundColor }) => {
     >
       <span
         className={styles.filterButtonText}
-        style={{ fontSize: size.fonts.xsmall }}
+        style={{ fontSize: size.fonts.xsmall, color: color.text.primaryBlack }}
       >
         {text}
       </span>

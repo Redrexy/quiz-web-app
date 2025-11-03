@@ -85,30 +85,46 @@ export const Leaderboard = () => {
           className={styles.leaderboardHeader}
           style={{
             background: color.background.tertiaryBackground,
-            color: color.text.primaryWhite,
+            color: color.text.primaryBlack,
           }}
         >
           <div
             className={styles.leaderboardHeaderText}
-            style={{ flex: 0.5, fontSize: size.fonts.small }}
+            style={{
+              flex: 0.5,
+              fontSize: size.fonts.small,
+              color: color.text.primaryBlack,
+            }}
           >
             Rank
           </div>
           <div
             className={styles.leaderboardHeaderText}
-            style={{ flex: 1.5, fontSize: size.fonts.small }}
+            style={{
+              flex: 1.5,
+              fontSize: size.fonts.small,
+              color: color.text.primaryBlack,
+            }}
           >
             Name
           </div>
           <div
             className={styles.leaderboardHeaderText}
-            style={{ flex: 0.5, fontSize: size.fonts.small }}
+            style={{
+              flex: 0.5,
+              fontSize: size.fonts.small,
+              color: color.text.primaryBlack,
+            }}
           >
             Score
           </div>
           <div
             className={styles.leaderboardHeaderText}
-            style={{ flex: 1, fontSize: size.fonts.small }}
+            style={{
+              flex: 1,
+              fontSize: size.fonts.small,
+              color: color.text.primaryBlack,
+            }}
           >
             Date
           </div>
@@ -121,25 +137,41 @@ export const Leaderboard = () => {
           >
             <div
               className={styles.leaderboardItemText}
-              style={{ flex: 0.5, fontSize: size.fonts.small }}
+              style={{
+                flex: 0.5,
+                fontSize: size.fonts.small,
+                color: color.text.primaryBlack,
+              }}
             >
               {index + 1}
             </div>
             <div
               className={styles.leaderboardItemText}
-              style={{ flex: 1.5, fontSize: size.fonts.small }}
+              style={{
+                flex: 1.5,
+                fontSize: size.fonts.small,
+                color: color.text.primaryBlack,
+              }}
             >
               {user.name}
             </div>
             <div
               className={styles.leaderboardItemText}
-              style={{ flex: 0.5, fontSize: size.fonts.small }}
+              style={{
+                flex: 0.5,
+                fontSize: size.fonts.small,
+                color: color.text.primaryBlack,
+              }}
             >
               {user.score}
             </div>
             <div
               className={styles.leaderboardItemText}
-              style={{ flex: 1, fontSize: size.fonts.small }}
+              style={{
+                flex: 1,
+                fontSize: size.fonts.small,
+                color: color.text.primaryBlack,
+              }}
             >
               {new Date(user.date).toLocaleDateString()}
             </div>
