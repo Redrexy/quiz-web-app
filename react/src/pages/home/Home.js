@@ -11,27 +11,38 @@ export const Home = () => {
       className={styles.homePage}
       style={{ background: color.background.primaryBackground }}
     >
-      <h1 className={styles.homeTitle}>React Quiz Application</h1>
-      <h3 className={styles.homeDetails}>
-        Take this test to test your knowledge!
-      </h3>
+      <div
+        className={styles.homeContainer}
+        style={{ background: color.background.secondaryBackground }}
+      >
+        <h1
+          className={styles.homeTitle}
+          style={{ color: color.text.primaryBlack }}
+        >
+          React Quiz Application
+        </h1>
+        <h3
+          className={styles.homeDetails}
+          style={{ color: color.text.primaryBlack }}
+        >
+          Take this test to test your knowledge!
+        </h3>
 
-      <div className={styles.buttonContainer}>
-        <PrimaryButton
-          text="Survival Mode"
-          onClick={() => navigate('/survival')}
-          color={color.button.primaryColor}
-        />
-        <PrimaryButton
-          text="1 Minute Mode"
-          onClick={() => navigate('/minute')}
-          color={color.button.primaryColor}
-        />
-        <PrimaryButton
-          text="Leaderboard"
-          onClick={() => navigate('/leaderboard')}
-          color={color.button.primaryColor}
-        />
+        <div className={styles.buttonContainer}>
+          <PrimaryButton
+            text="Survival Mode"
+            onClick={() => navigate('/survival')}
+          />
+          <PrimaryButton
+            text="1 Minute Mode"
+            onClick={() => navigate('/minute')}
+          />
+          <PrimaryButton
+            text="Leaderboard"
+            onClick={() => navigate('/leaderboard')}
+          />
+          <PrimaryButton text="Example" onClick={null} />
+        </div>
       </div>
     </div>
   );

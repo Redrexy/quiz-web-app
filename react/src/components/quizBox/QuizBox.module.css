@@ -1,12 +1,11 @@
 .quizBox {
-  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 25px;
   width: 750px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   gap: 10px;
 }
 .quizDetails {
@@ -30,6 +29,7 @@
   padding: 10px;
 }
 .quizQuestionText {
+  font-family: proxima-nova, sans-serif;
   text-align: center;
   margin: 0px;
 }
@@ -44,10 +44,10 @@
 }
 .shuffledAnswersButton {
   background-color: white;
-  font-size: 15px;
   padding: 10px;
   border-width: 0px;
   transition: all 0.1s ease-in-out;
+  font-family: proxima-nova, sans-serif;
 }
 .shuffledAnswersButton:hover {
   cursor: pointer;

@@ -5,17 +5,28 @@
   align-items: center;
   justify-content: center;
 }
-.homeTitle {
-  color: white;
-  margin-bottom: 0px;
-}
-.homeDetails {
-  color: white;
-}
-.buttonContainer {
+.homeContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+.homeTitle {
+  font-family: proxima-nova, sans-serif;
+  margin: 0px;
+}
+.homeDetails {
+  font-family: proxima-nova, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.buttonContainer {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }

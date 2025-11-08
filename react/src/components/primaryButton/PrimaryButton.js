@@ -1,17 +1,17 @@
 import styles from './PrimaryButton.module.css';
-import { size } from '../../theme';
+import { color, size } from '../../theme';
 
-export const PrimaryButton = ({ text, onClick, color }) => {
+export const PrimaryButton = ({ text, onClick }) => {
   return (
     <button
       type="button"
       className={styles.primaryButton}
-      style={{ background: color }}
+      style={{ backgroundColor: color.button.primaryColor }}
       onClick={onClick}
     >
       <span
         className={styles.buttonText}
-        style={{ fontSize: size.fonts.large }}
+        style={{ fontSize: size.fonts.large, color: color.text.primaryWhite }}
       >
         {text}
       </span>

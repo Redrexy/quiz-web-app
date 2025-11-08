@@ -2,16 +2,15 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: black;
   padding: 50px 50px;
+  gap: 20px;
 }
 .leaderboardTop {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 .filterContainer {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
 }
 .filterDate {
   flex: 1;
@@ -34,7 +33,6 @@
 }
 .leaderboardHeaderText {
   text-align: left;
-  color: white;
 }
 .leaderboardItem {
   display: flex;
@@ -46,5 +44,4 @@
 }
 .leaderboardItemText {
   text-align: left;
-  color: white;
 }

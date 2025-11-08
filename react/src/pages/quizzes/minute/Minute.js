@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Minute.module.css';
 import { QuizBox } from '../../../components/quizBox/QuizBox';
-import { size } from '../../../theme';
+import { color, size } from '../../../theme';
 
 export const Minute = () => {
   const [questions, setQuestions] = useState([]);
@@ -111,7 +111,10 @@ export const Minute = () => {
   }, []);
 
   return (
-    <div className={styles.minutePage}>
+    <div
+      className={styles.minutePage}
+      style={{ background: color.background.primaryBackground }}
+    >
       {currentQuestion ? (
         <QuizBox
           question={currentQuestion}
@@ -126,7 +129,10 @@ export const Minute = () => {
       ) : (
         <p
           className={styles.loadingPage}
-          style={{ fontSize: size.fonts.xxlarge }}
+          style={{
+            fontSize: size.fonts.xxlarge,
+            color: color.text.primaryWhite,
+          }}
         >
           Loading question...
         </p>

@@ -42,37 +42,40 @@ export const Result = () => {
   }, [score]);
 
   return (
-    <div className={styles.resultPage}>
-      <div className={styles.resultHeader}>
+    <div
+      className={styles.resultPage}
+      style={{ background: color.background.primaryBackground }}
+    >
+      <div
+        className={styles.resultHeader}
+        style={{ background: color.background.secondaryBackground }}
+      >
         <p
           className={styles.resultTitle}
-          style={{ fontSize: size.fonts.xxlarge }}
+          style={{
+            fontSize: size.fonts.xxlarge,
+            color: color.text.primaryBlack,
+          }}
         >
           Score: {score}
         </p>
         <p
           className={styles.resultMessage}
-          style={{ fontsize: size.fonts.medium }}
+          style={{
+            fontsize: size.fonts.medium,
+            color: color.text.primaryBlack,
+          }}
         >
           {resultMessage}
         </p>
       </div>
 
       <div className={styles.buttonContainer}>
-        <PrimaryButton
-          text="Home"
-          onClick={() => navigate('/')}
-          color={color.button.home}
-        />
-        <PrimaryButton
-          text="Play Again"
-          onClick={() => navigate(`/${type}`)}
-          color={color.button.playAgain}
-        />
+        <PrimaryButton text="Home" onClick={() => navigate('/')} />
+        <PrimaryButton text="Play Again" onClick={() => navigate(`/${type}`)} />
         <PrimaryButton
           text="Submit Score"
           onClick={() => handleSubmitScore()}
-          color={color.button.submitScore}
         />
       </div>
 
