@@ -18,4 +18,9 @@ export const color = {
     correctColor: '#4CAF50',
     incorrectColor: '#F44336',
   },
+  leaderboard: {
+    1: '#FFB74D',
+    2: '#90A4AE',
+    3: '#FF8A65',
+  },
 };

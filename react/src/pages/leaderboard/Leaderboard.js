@@ -8,6 +8,20 @@ export const Leaderboard = () => {
   const [filterDate, setFilterDate] = useState('all');
   const [filterType, setFilterType] = useState('survival');
   const [leaderboard, setLeaderboard] = useState([]);
+  let lastScore = null;
+  let lastRank = 0;
+
+  const rankedLeaderboard = leaderboard.map((user, index) => {
+    if (user.score === lastScore) {
+      user.rank = lastRank;
+    } else {
+      user.rank = index + 1;
+      lastRank = index + 1;
+      lastScore = user.score;
+    }
+
+    return user;
+  });
 
   const buttonColor = (value, filter) => {
     if (filter === 'date') {
@@ -129,21 +143,36 @@ export const Leaderboard = () => {
             Date
           </div>
         </div>
-        {leaderboard.map((user, index) => (
+        {rankedLeaderboard.map((user) => (
           <div
             className={styles.leaderboardItem}
             style={{ backgroundColor: color.background.secondaryBackground }}
-            key={index}
+            key={user.id || user.name + user.score}
           >
             <div
               className={styles.leaderboardItemText}
               style={{
                 flex: 0.5,
                 fontSize: size.fonts.small,
-                color: color.text.primaryBlack,
               }}
             >
-              {index + 1}
+              <span
+                style={{
+                  background: color.leaderboard[user.rank] || null,
+                  color:
+                    user.rank <= 3
+                      ? color.text.primaryWhite
+                      : color.text.primaryBlack,
+                  width: 20,
+                  height: 20,
+                  borderRadius: '50%',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                {user.rank}
+              </span>
             </div>
             <div
               className={styles.leaderboardItemText}
