@@ -11,21 +11,31 @@ A simple trivia web app where users can choose a mode and submit to a leaderboar
 
 ### Setup for React
 
-1. cd react
-2. npm install
-3. npm start
+```bash
+cd react
+npm install
+npm start
+```
 
-### Setup for DJango
+### Setup for Django
 
-1. cd django
-2. py -3 -m venv .venv
-3. venv\Scripts\activate
-4. pip install -r requirements.txt
-5. python manage.py makemigrations
-6. python manage.py migrate
-7. python manage.py runserver
+```bash
+cd django
+py -3 -m venv .venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
 
 ## Running the app
-1. Start Django backend with python manage.py runserver
-2. Start React with npm start
+1. Start Django backend
+   ```bash
+   python manage.py runserver
+   ```
+2. In a separate terminal, start the React frontend
+   ```bash
+   npm start
+   ```
 3. App should be running!
