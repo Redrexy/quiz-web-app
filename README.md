@@ -1,6 +1,6 @@
-# Arpan's Quiz App using React
+# Trivia Web App
 
-A simple quiz web app where users can choose a mode and submit to a leaderboard. The project uses React for the frontend and Django for the backend with PostgreSQL for the database.
+A simple trivia web app where users can choose a mode and submit to a leaderboard. The project uses React for the frontend and Django for the backend with PostgreSQL for the database.
 
 ## Setup for React
 
