@@ -12,10 +12,12 @@ export const Result = () => {
   const questions = result.questions;
   const score = result.score;
   const type = result.type;
-  const name = 'example2';
   const [resultMessage, setResultMessage] = useState('');
 
   const handleSubmitScore = async () => {
+    const name = prompt('Enter your Nickname');
+    if (!name) return;
+
     const result = await submitScore(name, score, type);
 
     if (result.success) {
